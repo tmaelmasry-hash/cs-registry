@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CS Registry">
+<meta name="theme-color" content="#0b1220">
+<title>Cardiogenic Shock Registry — KAMC Hajj Study</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+
+<div id="login">
+  <div class="card">
+    <div class="logo">🫀</div>
+    <h1>Cardiogenic Shock Registry</h1>
+    <div class="mut small" style="text-align:center">KAMC · Hajj Mass-Gathering Study</div>
+    <label for="lu">Username</label>
+    <input id="lu" autocomplete="username" autocapitalize="off" autocorrect="off">
+    <label for="lp">Password</label>
+    <input id="lp" type="password" autocomplete="current-password">
+    <label class="row" style="color:var(--tx);margin-top:12px"><input id="lrem" type="checkbox" style="width:auto;min-height:0"> Keep me signed in on this device</label>
+    <button class="btn p" style="width:100%;margin-top:14px" data-act="login">Sign in</button>
+    <div id="lerr" class="warn" style="text-align:center;margin-top:8px"></div>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header>
+    <div class="ttl">🫀 CS <span>Registry</span><i id="sdot" class="dot" title="Saved"></i></div>
+    <button class="btn sm" data-act="newPt">＋ New</button>
+    <button class="btn sm" data-act="lock" title="Lock">🔒</button>
+  </header>
+  <main>
+    <section id="v-dash" class="view"></section>
+    <section id="v-list" class="view hidden"></section>
+    <section id="v-entry" class="view hidden"></section>
+    <section id="v-stats" class="view hidden"></section>
+    <section id="v-set" class="view hidden"></section>
+  </main>
+  <nav id="tabs">
+    <button data-act="view" data-arg="dash" class="on"><b>◫</b>Dashboard</button>
+    <button data-act="view" data-arg="list"><b>☰</b>Patients</button>
+    <button data-act="view" data-arg="entry"><b>✎</b>Entry</button>
+    <button data-act="view" data-arg="stats"><b>∑</b>Stats</button>
+    <button data-act="view" data-arg="set"><b>⚙</b>Settings</button>
+  </nav>
+</div>
+<input id="fileJson" type="file" accept=".json,application/json" class="hidden">
+<input id="fileCsv" type="file" accept=".csv,text/csv" class="hidden">
+<div id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
